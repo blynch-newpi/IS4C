@@ -35,26 +35,38 @@ Data Connection Settings
 ************************************************************************************/
 
 $_SESSION["mServer"] = "127.0.0.1";
-$_SESSION["mDatabase"] = "is4c_log";
-$_SESSION["remoteDBMS"] = "mysql";
-$_SESSION["mUser"] = "is4cserver";
-$_SESSION["mPass"] = "is4cserver";
 
-$_SESSION["localhost"] = "127.0.0.1";
+
+$_SESSION["mDatabase"] = "is4c_log";
+
+$_SESSION["DBMS"] = "mysql";
+$_SESSION["remoteDBMS"] = "mysql";
+
 $_SESSION["tDatabase"] = "translog";
 $_SESSION["pDatabase"] = "opdata";
-$_SESSION["DBMS"] = "mysql";
-$_SESSION["localUser"] = "is4clane";
-$_SESSION["localPass"] = "is4clane";
-
 $_SESSION["laneno"] = "01";
+$_SESSION["localhost"] = "127.0.0.1";
+
+$_SESSION["mUser"] = "is4clane";
+$_SESSION["mPass"] = "";
+
+$_SESSION["localUser"] = "is4clane";
+$_SESSION["localPass"] = "";
+
 
 /***********************************************************************************
 Receipt & Printer Settings
 ************************************************************************************/
 
 $_SESSION["print"] = 0;
-$_SESSION["printerPort"] = "/dev/null";
+
+if ($_SESSION["OS"] == "win32") {
+	$_SESSION["printerPort"] = "lpt1:";
+} else {
+//	$_SESSION["printerPort"] = "/dev/lp0";
+//	$_SESSION["printerPort"] = "/dev/ttyS1";
+	$_SESSION["printerPort"] = "/dev/null";
+}
 
 $_SESSION["receiptHeader1"] = "R O C H D A L E  F O O D  C O - O P";
 $_SESSION["receiptHeader2"] = "104 NE Elm Street";
@@ -70,8 +82,10 @@ $_SESSION["ckEndorse2"] = "TO CO-OP BANK";
 $_SESSION["ckEndorse3"] = "ACCOUNT _______";
 $_SESSION["ckEndorse4"] = "ROCHDALE FOOD CO-OP";
 
+
 $_SESSION["chargeSlip1"] = "ROCHDATE FOOD CO-OP"; // Store name on charge slips
 $_SESSION["chargeSlip2"] = "S T O R E   C O P Y";  // Alternative to "Merchant Copy"
+
 
 /***********************************************************************************
 Screen Message Settings
@@ -102,8 +116,8 @@ $_SESSION["ccSharePath"] = "\\\\".$_SESSION["ccServer"]."\\".$_SESSION["ccShare"
 /***********************************************************************************
 Other Settings
 ************************************************************************************/
-$_SESSION["MADdiscount"] = 0;        //    Enter as percentage.
-$_SESSION["needBasedDisc"] = 0;        //    Enter as percentage.  Set to 0 to turn off.
+$_SESSION["MADdiscount"] = 0;		//	Enter as percentage.
+$_SESSION["needBasedDisc"] = 0;		//	Enter as percentage.  Set to 0 to turn off.
 $_SESSION["discountEnforced"] = 1;
 $_SESSION["lockScreen"] = 1;
 $_SESSION["timedlogout"] = 180000;
@@ -115,7 +129,7 @@ $_SESSION["cashOverLimit"] = 1;
 
 $_SESSION["inputMasked"] = 0;
 
-$_SESSION["SCReceipt"] = 1;            /***staff charge receipt - print default for each lane--apbw 1/31/05***/
+$_SESSION["SCReceipt"] = 1;			/***staff charge receipt - print default for each lane--apbw 1/31/05***/
 
 $_SESSION["CCintegrate"] = 1;
 

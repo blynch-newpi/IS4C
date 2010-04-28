@@ -1,4 +1,5 @@
-USE is4c_log;
+use is4c_log;
+
 DROP TABLE IF EXISTS `dtransactions`;
 CREATE TABLE `dtransactions` (
   `datetime` datetime default NULL,

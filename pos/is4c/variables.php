@@ -1,3 +1,5 @@
 <?php
-    print_r($_SESSION);
-s
+
+print_r($_SESSION);
+
+?>

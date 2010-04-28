@@ -21,7 +21,8 @@
 
 *********************************************************************************/
  // session_start(); ?>
-<frameset cols='675,*' frameborder='0' scrolling='no'>
-    <frame src='/login3.php' border='0' scrolling='no' />
-    <frame src='/right.php' border='0' scrolling='no' />
-</frameset>
+<FRAMESET cols='675,*' frameborder='0' scrolling='no'>
+<FRAME src='/login3.php' border='0' scrolling='no'>
+<FRAME src='/right.php' border='0' scrolling'no'>
+
+</FRAMESET>

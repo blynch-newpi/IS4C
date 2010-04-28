@@ -1,4 +1,5 @@
-USE is4c_log;
+use is4c_log;
+
 DROP TABLE IF EXISTS `suspended`;
 CREATE TABLE `suspended` (
   `datetime` datetime default NULL,

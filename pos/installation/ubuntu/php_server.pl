@@ -47,7 +47,7 @@ while ($line = <FILE> ) {
 	}
 
 	if ($errorlog >= 0) {
-		$line = "error_log = /pos/backend/log/php.error\n"; 
+		$line = "error_log = /pos/fannie/log/errors\n"; 
 	}
 
 	print NEWFILE $line;

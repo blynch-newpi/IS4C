@@ -33,12 +33,12 @@ if (uc($continue) eq "Y" || uc($continue) eq "YES") {
 		if ($dr >= 0) {
 			$currentroot = substr($line, 0, $dr + 13);
 			chop($currentroot);
-			$line =  substr($line, 0, $dr + 13)."/pos/backend/\n";
+			$line =  substr($line, 0, $dr + 13)."/pos/fannie/\n";
 		}
 		$dir = index($line, "<Directory /");
 		$crposition = index($line, $currentroot);
 		if ($dir >= 0 && $crposition >= 0) {
-			$line = substr($line, 0, $dir + 11)."/pos/backend/>\n";
+			$line = substr($line, 0, $dir + 11)."/pos/fannie/>\n";
 		}
 		print NEWFILE $line;		
 		
@@ -48,9 +48,12 @@ if (uc($continue) eq "Y" || uc($continue) eq "YES") {
 	close(NEWFILE);
 	close(FILE);
 
-	print "\n\nWeb root changed to /pos/backend/\n";
+	print "\n\nWeb root changed to /pos/fannie/\n";
 
 	system("cp /etc/apache2/sites-available/default /etc/apache2/sites-available/default.dist");
 	system("mv default.ubuntu /etc/apache2/sites-available/default");
 	system("/etc/init.d/apache2 restart");
+
+
+
 }
