@@ -3,4 +3,12 @@
 chmod 777 /dev/lp0
 chmod 777 /dev/ttyS0
 
+#On "Freedom Panels from ECRS, manufactured by Pioneer POS (also known as the Stealth M5). It helps to
+#open up the usb port for the receipt printer.  So I've added this to the /etc/init.d directory on Ubuntu. -BL 07/19/2010
+
+cd /dev
+chmod 777 usblp0
+#Which is also symlink'd to below
+cd usb
+chmod 777 lp0 
 
